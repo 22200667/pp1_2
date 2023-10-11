@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        /* Internal CSS styles */
+        /* Add your common styles here */
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>책 추가</h1>
+        <form id="addForm">
+            
+            <div>
+                <label for="title">제목</label>
+                <input type="text" id="title" name="title" required><br>
+                <label for="author">저자</label>
+                <input type="text" id="author" name="author" required><br>
+                <label for="pub">출판사</label>
+                <input type="text" id="pub" name="pub" required><br>
+                <label for="stc">재고</label>
+                <input type="text" id="stc" name="stc" required><br><br>
+                
+            </div>
+            
+            <button type="button" id="addButton">추가</button>
+        </form>
+    </div>
+    <script>
+        // Internal JavaScript for handling form submission and validation
+        document.getElementById("addButton").addEventListener("click", function() {
+            var title = document.getElementById("title");
+            var author = document.getElementById("author");
+            var pub = document.getElementById("pub");
+            var stc = document.getElementById("stc");
+            var status = document.getElementById("status");
+
+            if (title.value.trim() === "") {
+                alert("제목 입력을 완료해 주세요");
+                title.focus();
+            } else if (author.value.trim() === "") {
+                alert("저자 입력을 완료해 주세요");
+                author.focus();
+            } else if (pub.value.trim() === "") {
+                alert("출판사 입력을 완료해 주세요");
+                pub.focus();
+            } else if (stc.value.trim() === "") {
+                alert("재고 입력을 완료해 주세요");
+                stc.focus();
+            } else{
+                alert("게시물이 추가됩니다");
+                // Handle data storage (e.g., using local storage)
+            }
+        });
+    </script>
+</body>
+</html>

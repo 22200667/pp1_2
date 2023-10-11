@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        /* Internal CSS styles */
+        /* Add your common styles here */
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>게시물 내용</h1>
+        <p>게시물 내용을 여기에 표시합니다.</p>
+        <a href="edit.html?id=1">수정</a>
+        <button id="deleteButton">삭제</button>
+    </div>
+    <script>
+        // Internal JavaScript for handling interactions
+        document.getElementById("deleteButton").addEventListener("click", function() {
+            if (confirm("게시물을 삭제할까요?")) {
+                // Handle data deletion (e.g., using local storage)
+                alert("삭제되었습니다");
+                
+            }
+        });
+    </script>
+</body>
+</html>

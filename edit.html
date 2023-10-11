@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        /* Internal CSS styles */
+        /* Add your common styles here */
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>게시물 편집</h1>
+        <form id="editForm">
+            <!-- Input fields for editing a post -->
+            <div>
+                <label for="title">제목</label>
+                <input type="text" id="title" name="title" required>
+            </div>
+            <!-- Add more input fields for other post details here -->
+            <button type="button" id="editButton">수정</button>
+        </form>
+    </div>
+    <script>
+        // Internal JavaScript for handling form submission and validation
+        document.getElementById("editButton").addEventListener("click", function() {
+            var title = document.getElementById("title").value;
+            if (title.trim() === "") {
+                alert("제목은 필수 입력 항목입니다.");
+            } else {
+                if (confirm("게시물을 수정할까요?")) {
+                    // Handle data update (e.g., using local storage)
+                }
+            }
+        });
+    </script>
+</body>
+</html>
