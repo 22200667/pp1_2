@@ -1,34 +1,57 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <style>
-        /* Internal CSS styles */
-        /* Add your common styles here */
-    </style>
+    <link rel="stylesheet" type="text/css" href="my.css">
 </head>
 <body>
     <div class="container">
-        <h1>게시물 편집</h1>
-        <form id="editForm">
-            <!-- Input fields for editing a post -->
+        <div class="header">
+            <h1>도서 정보 수정</h1>
+          </div>
+        <form id="addForm">
+            
             <div>
                 <label for="title">제목</label>
-                <input type="text" id="title" name="title" required>
+                <input type="text" id="title" name="title" value="오해와 이해"required><br>
+                <label for="author">저자</label>
+                <input type="text" id="author" name="author" value="김기호" required><br>
+                <label for="pub">출판사</label>
+                <input type="text" id="pub" name="pub" value="동명사"required><br>
+                <label for="stc">재고</label>
+                <input type="text" id="stc" name="stc"value="10" required><br><br>
+                
             </div>
-            <!-- Add more input fields for other post details here -->
-            <button type="button" id="editButton">수정</button>
+        <div class="footer">
+            <a href="index.html">뒤로 가기</a>
+            <button type="button" id="addButton">수정</button>
+        </div>
         </form>
     </div>
     <script>
         // Internal JavaScript for handling form submission and validation
-        document.getElementById("editButton").addEventListener("click", function() {
-            var title = document.getElementById("title").value;
-            if (title.trim() === "") {
-                alert("제목은 필수 입력 항목입니다.");
-            } else {
-                if (confirm("게시물을 수정할까요?")) {
-                    // Handle data update (e.g., using local storage)
-                }
+        document.getElementById("addButton").addEventListener("click", function() {
+            var title = document.getElementById("title");
+            var author = document.getElementById("author");
+            var pub = document.getElementById("pub");
+            var stc = document.getElementById("stc");
+            var status = document.getElementById("status");
+
+            if (title.value.trim() === "") {
+                alert("제목 입력을 완료해 주세요");
+                title.focus();
+            } else if (author.value.trim() === "") {
+                alert("저자 입력을 완료해 주세요");
+                author.focus();
+            } else if (pub.value.trim() === "") {
+                alert("출판사 입력을 완료해 주세요");
+                pub.focus();
+            } else if (stc.value.trim() === "") {
+                alert("재고 입력을 완료해 주세요");
+                stc.focus();
+            } else{
+                if(confirm("게시물을 수정할까요?"))
+                    alert("게시물이 수정됩니다");
+                
             }
         });
     </script>

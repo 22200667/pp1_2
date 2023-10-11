@@ -1,17 +1,21 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <style>
-        /* Internal CSS styles */
-        /* Add your common styles here */
-    </style>
+    <link rel="stylesheet" type="text/css" href="my.css">
 </head>
 <body>
     <div class="container">
-        <h1>게시물 내용</h1>
-        <p>게시물 내용을 여기에 표시합니다.</p>
-        <a href="edit.html?id=1">수정</a>
-        <button id="deleteButton">삭제</button>
+        <div class="header">
+            <h1>도서 정보</h1>
+          </div>
+        <p>저자: 김기호</p>
+        <p>출판사: 동명사</p>
+        <p>재고: 10</p>
+    </div>
+    <div class="footer">
+        <a href="edit.html?id=1">Edit</a>
+        <button id="deleteButton">Delete</button>
+        <a href="index.html">뒤로 가기</a>
     </div>
     <script>
         // Internal JavaScript for handling interactions
@@ -19,7 +23,7 @@
             if (confirm("게시물을 삭제할까요?")) {
                 // Handle data deletion (e.g., using local storage)
                 alert("삭제되었습니다");
-                
+
             }
         });
     </script>
